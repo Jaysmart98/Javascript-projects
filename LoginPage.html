@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+       input{
+           margin-top: 20px;
+           display: grid;
+           width: 400px;
+           height: 40px;
+           color: black;
+           background-color: rgb(255, 255, 255);
+           font-size: 1.3em;
+           margin-left: 120px;
+       }
+       button{
+           color: white;
+           background-color: blue;
+           width: 200px;
+           margin-top: 20px;
+           height: 40px;
+           margin-left: 90px;
+       }
+       section{
+         margin-left: 400px;
+         background-color: orangered;
+         width: 700px;
+         height: 600px;
+       }
+       div{
+         color: greenyellow;
+         margin-top: 10px;
+         margin-left: 70px;
+       }
+       h2{
+         color:white;
+         margin-left: 170px;
+         margin-top: 10px;
+       }
+    </style>
+            
+<section>
+
+  <h2>Login into your Account</h2>
+  <input type="text" placeholder="Username" id="ip1">
+  <input type="text" placeholder="Email" id="ip2">
+  <input type="password" id="ip4" placeholder="Password">  <br>
+  <div style=" font-size: 1.3em;">
+  
+    <input type="text" id="mode" style="margin-left: 50px; font-size: 1.1em; margin-top: -8px;" placeholder="Mode of Operation">
+   </div>
+
+  
+
+  <button onclick="myFunct()">Login</button>
+  <button onclick="myFunction()">Sign in</button>
+
+
+</section>
+      <script type="text/javascript">
+
+    //    Array is use to keep set of file inside []
+
+    //   var myArr =[1, 4, 5, 6, 7, 8, 4, 12, 6, 8, 9, 22, 55, 0];
+    //   for ( var  i = 0;  i < myArr.length;  i++) {
+    //       if ( myArr[i] === 4){
+    //         console.log();
+    //       }
+    //       else {
+    //         console.log("I am " + myArr[i] + " years old"); 
+    //       }
+    //   }
+                    // Object is to keep items using just one entity and the arrangement of items doesnt matter in object unlike array.
+            // var student1 = { name: "Joshua", dept: "Software", school: " SQI"}
+            // var student2 = { name: "Kayode", dept: "Hardware", school: " SQI"}
+            // var student3 = { name: "Adekunle", dept: "Mechatronics", school: "Tech-u"}
+            // console.log(student2);
+            // alert(student1)
+         
+            //   var ListOfStudents = [
+            //             { name: "Joshua",
+            //               dept: "Software",
+            //               school: "SQI"
+            //   },
+            //   { name: "Kayode",
+            //               dept: "Hardware",
+            //               school: "SQI"
+            //   },
+            //   { name: "Blessing",
+            //               dept: "Mechatronics",
+            //               school: "SQI"
+            //   },
+            //   { name: "Goodness",
+            //               dept: "Robotics",
+            //               school: "SQI"
+            //   }     
+      //]
+
+
+      const myFunct=()=>{
+              let a = localStorage.getItem("RegDetails");
+              let b = JSON.parse(a);
+
+        if ( ip1.value == "" && ip2.value == "" && ip3.value == "" && mode.value == ""){
+           alert("PLease fill every information requested!")
+          }
+        //   else if ( b.UserName !== ip1.value  ) {
+        //     alert("Incorrect Username")
+        //   }
+        //   else if ( b.Email !== ip2.value  ) {
+        //     alert("Incorrect Email")
+        //   }
+        //   else if ( b.Password !== ip3.value) {
+        //      alert("Incorrect Password")
+        //  }
+       else if ( mode.value === "BUYER" ||  mode.value === "Buyer"  || mode.value === "buyer" ) {
+            location.href = 'users.html';
+         }
+       else if ( mode.value === "SELLER" || mode.value === "Seller" || mode.value === "seller" ){
+          location.href = 'obj.html'
+          }
+    }
+
+    const myFunction=()=>{
+      location.href = 'RegPage.html'
+
+    //     var myObj = [
+    //          { name: ip1.value, 
+    //            dept: ip2.value,
+    //            school: ip3.value 
+    //         }
+    //     ]
+    //     for ( var  i = 0;  i < myObj.length;  i++) {
+    //       if ( ip1.value == "" && ip2.value == "" && ip3.value == ""){
+    //           result.innerHTML = "";
+    //       }
+    //       else {
+    //         result.innerHTML += " Student name is " + myObj[i].name + ", in " + myObj[i].dept + 
+    // " Engineering Department," + " from " + myObj[i].school + " COLLEGE of ICT" + "<br>";
+    //       }
+      
+    //          // result.innerHTML += " My name is " +ListOfStudents[i].name ;
+    //     }
+    }
+
+      </script>
+</body>
+</html>
+
+<!-- //for ( var i = 0; i < 6;) {
+    //     console.log("hello");
+    //     continue;
+    //     console.log("hi");
+    //     i++;
+    // } -->

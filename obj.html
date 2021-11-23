@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(3, 3, 54);">
+        <!-- var obj = {"name of students"} = bracket notation-->
+          <!-- dot Notation  --- obj.name -->
+          <!-- bracket Notation     obj.["name"] -->
+
+          <!-- <button onclick="myFunct()">click me!</button>
+          <input type="text" id="ip1">
+          <input type="text" id="ip2"> -->
+
+          <!-- Inventory system
+          Admin end
+          User
+
+
+          Admin end <br> -->
+
+          <style>
+              button{
+                  margin: 20px;
+                  width: 200px;
+                  height: 40px;
+                  color: white;
+                  background-color: rgb(255, 81, 0);
+                  font-size: 1.1em;
+              }
+              legend{
+                text-align: center;
+                  color: white;
+                  width: 200px;
+                  font-size: 2.0em;
+                  /* background-color: rgb(219, 89, 49); */
+              }
+              table{
+                  background-color: rgb(113, 115, 145);
+                  color: white;
+                  width: 900px;
+                  height: 150px;
+                  margin-top: 20px;
+              }
+              fieldset{
+                  background-color: rgb(3, 3, 54);
+              }
+              input{
+                  margin: 10px;
+                  width: 300px;
+                  height: 30px;
+                  color: black;
+                  font-size: 1.2em;
+                  background-color: rgb(211, 205, 205);
+              }
+              #sucess{
+                   color: white;
+                   font-size: 1.3em;
+              }
+              a{
+                  text-decoration: none;
+                  color: white ;
+              }
+          </style>
+          
+          <fieldset>
+              <legend style="width: 300PX; height: 40px;">INVENTORY SYSTEM</legend>
+              <legend style="width: 1470px; background-color: rgb(219, 89, 49);">Admin End</legend>
+            <hr>
+
+            <input type="text" name="" id="ip1" placeholder="Name">
+            <input type="text" name="" id="ip2" placeholder="quantity">
+            <input type="text" name="" id="ip3" placeholder="price">        
+            <input type="text" name="" id="ip4" placeholder="Remark">       
+            <input type="file" id="ip5">
+            <br>
+            <hr>
+            <hr>
+            <button onclick="addGoodsFunction()">Store Good</button>
+            <button onclick="displayFunction()">Display Detail</button>
+            <button onclick="myFunctn()"><a href="">Add another Good</a></button>
+            <br>
+            <div id="sucess"></div>
+            <hr>
+            <hr>
+            <table border="5" width="300px" height="100px">
+              <tr> 
+                  <th style="font-size: 1.5em;">S/N</th>
+                  <td style="font-size: 1.5em;">Name</td>
+                  <th style="font-size: 1.5em;">Quantity</th>
+                  <th style="font-size: 1.5em;">price</th>
+                  <th style="font-size: 1.5em;">File</th>
+                  <th style="font-size: 1.5em;">Remark</th>
+                  <th style="font-size: 1.5em;">TOTAL</th>
+              </tr>
+
+
+              <tr>
+                  <td> <div id="num"></div>  </td>
+                  <td> <div id="Nam"></div> </td> 
+                  <td> <div id="Quantity"></div> </td>
+                  <td> <div id="Price"></div> </td>
+                  <td> <div id="myPicture" ></div> </td>
+                  <td> <div id="remark"></div> </td>
+                  <td> <div id="total"></div> </td>
+              </tr>
+          </table>
+          <hr>
+          <hr>
+          </fieldset>
+
+          <button><a href="users.html">User End</a> </button>
+
+          <button onclick="myTest()">HISTORY</button>
+
+          <!-- <div id="hist" style="color: white;"></div> -->
+<!-- <img src="picture/20210412_211801.jpg" alt="" style="width: 200px;height: 200px;"> -->
+
+ <script type="text/javascript">
+  let myArray = [];
+    
+
+  let count = 1;
+    
+    const addGoodsFunction=()=>{
+
+        num.innerHTML = "";
+       Nam.innerHTML = "";
+       Quantity.innerHTML = "";
+       Price.innerHTML = "";
+       myPicture.innerHTML = "";
+       total.innerHTML = "";
+       remark.innerHTML = "";
+
+          
+          if ( ip1.value == "" && ip2.value == "" && ip3.value == "" && ip5.value == ""){
+                       alert("Please fill every required details")
+                }
+                else {
+                  sucess.innerText = "Good Details Sucessfully Stored!";
+                  
+                                 let myObj = { good: ip1.value, 
+                                  quantity: ip2.value,
+                                  price: ip3.value,
+                                  pics: ip5.value.slice(12),
+                                  Total: ip2.value * ip3.value,
+                                  remark: ip4.value,
+                                  counter : count
+                                  }
+      
+                              myArray.push(myObj);
+                            //   let store = JSON.stringify(myArray)
+                            //   localStorage.Obj = store;
+                              // let myParse = JSON.parse(localStorage.Obj)
+                                  localStorage.setItem("myStoredDetails", JSON.stringify(myArray))
+                              count++;
+      
+                }
+      
+          }
+
+    const displayFunction=()=>{
+
+        let a = localStorage.getItem("myStoredDetails");
+        let b = JSON.parse(a);
+
+for ( var  i = 0;  i < b.length;  i++) {
+//   if ( ip1.value == "" || ip2.value == "" ){
+//     Nam.innerHTML = "";
+   
+//   }
+//   else {
+    
+       num.innerHTML += b[i].counter + "<br>" + "<hr>";
+       Nam.innerHTML += b[i].good  + "<br>"  + "<hr>";
+       Quantity.innerHTML += b[i].quantity  + "<br>"  + "<hr>";
+       Price.innerHTML += b[i].price + " <br>"  + "<hr>";
+       myPicture.innerHTML +=`<img src='picture/${b[i].pics}' style='width: 100px;height: 100px;'> <br>`  + "<hr>";
+       total.innerHTML += `${b[i].Total} <br>`  + "<hr>";
+       remark.innerHTML += `${b[i].remark} <br>`  + "<hr>";
+
+
+
+    //  }
+  }
+}
+const myTest=()=>{
+    location.reload();
+}
+
+   const myFunctn=()=>{
+       num.innerHTML = "";
+       Nam.innerHTML = "";
+       Quantity.innerHTML = "";
+       Price.innerHTML = "";
+       myPicture.innerHTML = "";
+       total.innerHTML = "";
+       remark.innerHTML = "";
+
+   }
+
+   
+    
+    //    var arr = [];
+    //    localStorage.serial = JSON.stringify(num.innerHTML);
+    //    num.innerHTML += JSON.parse(localStorage.serial);
+
+
+    //     myObj=[];
+    //     localStorage.goodname = JSON.stringify(Nam.innerHTML)
+    //     localStorage.thequantity = JSON.stringify(Quantity.innerHTML)
+    //     localStorage.theprice = JSON.stringify(Price.innerHTML)
+    //     localStorage.thefile = JSON.stringify(Picture.innerHTML)
+    //     localStorage.theTTL = JSON.stringify(total.innerHTML)
+
+
+    // // if (Name.innerHTML === "" || Quantity.innerHTML === "" || Price.innerHTML === "" || Picture.innerHTML === "") {
+    //         Nam.innerHTML += JSON.parse(localStorage.goodname);
+    //         Quantity.innerHTML += JSON.parse(localStorage.thequantity);
+    //         Price.innerHTML += JSON.parse(localStorage.theprice);
+    //         Picture.innerHTML += JSON.parse(localStorage.thefile)
+    //         total.innerHTML += JSON.parse(localStorage.theTTL)
+        // }
+
+
+//     var arr = [];
+//    localStorage.serial = JSON.stringify( s/n.innerHTML);
+
+
+  
+
+    //   const myFunction=()=>{
+    //        if ( ip1.value === "" && ip2.value === "" && ip3.value === "" && ip4.value === "" && ip5.value === ""){
+    //             alert("Please fill every required details")
+    //        }
+    //        else{
+                 
+    //        }
+    //   }
+
+    // var name = "Joshua";
+    //   localStorage.name = "Joshua";
+    //   localStorage.setItem("name of student", name)
+    //   alert(localStorage.getItem("name"));
+    //   localStorage.removeItem("name of student")
+
+
+    //  const myFunct=()=>{
+    //     var obj = {};
+    //      var name = ip1.value;
+    //      obj[name] = ip2.value;
+    //      console.log(obj);
+    //  }
+
+
+
+    //  localStorage.name = "joshua";
+    //  localStorage.numb = 7;
+    //  var obj = {"name": joshua};
+    //  alert(obj.name);
+    // var a = 7;
+    //       var charger = {
+    //          color: "white",
+    //          manufacturer: "infinix",
+    //             charging(){
+    //                 //alert("hellooooooo");
+    //      //alert("My name is " + name + " i am from " + dept + " department");
+    //                 // alert(charger.color);   or
+    //                 console.log(this.color, this.manufacturer);
+    //             }
+    //      };
+    //       charger.charging();
+    </script>
+</body>
+</html>
+<!-- //var image = document.getElementById('image'); -->
+
+     <!-- -- JSON.stringify(["tee", "josh", "kee"]) -->
+    <!-- alert( localStorage.myNumber) -->
+    <!-- var getVal = localStorage.myArr;
+//     alert(getVal[1]) -->
+<!-- object consist of properties and value
+method are what object can do and undo, they are functions of a particular object -->

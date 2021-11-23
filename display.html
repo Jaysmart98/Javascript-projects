@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- event is an object which consist of many things inside it - it says everything about the function it is inserted to.
+    e / ev / event
+    console.log()
+ event.target
+ event.path
+ e.target.innertext = "Joshua";
+
+ -->
+    <button onclick="myFunction(1)" id="btn1">first btn</button>
+    <button onclick="myFunction(2)" id="btn2">second btn</button>
+
+
+<script type="text/javascript">
+
+      const myFunction = val =>{
+            if ( val === 1 ){
+                btn1.innertext = 'joshua';
+             }
+            else if( val === 2 ) {
+                 btn2.innertext = 'joshua';
+             }
+        }
+    </script>
+</body>
+</html>

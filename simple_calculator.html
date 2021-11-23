@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULARTOR</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div id="top">
+        <span>Calculator</span>
+    </div>
+    <div id="display"></div>
+    <div id="lines">
+        <div id="line1">
+            <button id="other" onclick="clearFunc()">CE</button>
+            <button id="other" onclick="clearFunc()">C</button>
+            <button id="other" onclick="spliceFunc()">X</button>
+            <button id="other" onclick="myFunc('/')">/</button>
+    
+        </div>
+        <div id="line2">
+            <button  id="norm" onclick="numFunc(7)">7</button>
+            <button id="norm" onclick="numFunc(8)">8</button>
+            <button  id="norm" onclick="numFunc(9)">9</button>
+            <button id="other" onclick="myFunc(' * ')">X</button>
+        </div>
+        <div id="line3">
+            <button id="norm" onclick="numFunc(4)">4</button>
+            <button id="norm" onclick="numFunc(5)">5</button>
+            <button id="norm" onclick="numFunc(6)">6</button>
+            <button id="other" onclick="myFunc(' - ')">-</button>
+        </div>
+        <div id="line4">
+            <button id="norm" onclick="numFunc(1)">1</button>
+            <button id="norm" onclick="numFunc(2)">2</button>
+            <button id="norm" onclick="numFunc(3)">3</button>
+            <button  id="other" onclick="myFunc(' + ')">+</button>
+        </div>
+        <div id="line5">
+            <button  id="other" onclick="numFunc(' +/- ')">+/-</button>
+            <button id="norm" onclick="numFunc(0)">0</button>
+            <button id="other"  onclick="numFunc(' . ')">.</button>
+            <button  id="other" onclick="resFunc(' = ')">=</button>
+        </div>
+    </div>
+    
+    <script>
+        function numFunc(message) {
+            display.innerHTML += message; 
+        }
+        function myFunc(cal) {
+            display.innerHTML += cal; 
+        }
+        function resFunc() {
+            let result = eval(display.innerHTML);
+            display.innerHTML = result;
+        }
+        function clearFunc() {
+           display.innerHTML = null; 
+        }
+        function spliceFunc() {
+            let spl = splice(display.innerHTML);
+            display.innerHTML = spl;
+        }
+    </script>
+
+</body>
+</html>

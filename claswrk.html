@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        section{
+             width: 800px;
+             height: 600px;
+             margin-left: 250px;
+            background-image: url(i-stock/image3.jpg);
+            background-size: cover;
+        }
+        input{
+            text-align: center;
+            width: 300px;
+            height: 30px;
+            background-color: tan;
+            color: white;
+            font-size: 1.3em;
+            margin-top: 220px;
+            margin-left: 315px;
+        }
+        button{
+            width: 150px;
+            height: 30px;
+            margin-top: 30px;
+            margin-left: 390px;
+            background-color: coral;
+            color: white;
+        }
+        div{
+            text-align: center;
+            color: white;
+            background-color: rgb(210,182,161);
+            margin-top: 10px;
+            margin-left: 380px;
+             width: 150px;
+             height: 25px;
+             border: 1.5px solid black;
+        }
+        h2{
+            margin-left: 330px;
+            margin-top: -210px;
+            color: rgb(77, 58, 44);
+        }
+    </style>
+         <section>
+            <input type="number" id="inp" name=""> <br>
+            <div id="Display"></div> <br>
+            <button onclick="myFunction()">DIsplay Result</button>
+            <h2>Welcome to Tech-u portal!</h2>
+      </section>
+      
+
+    <script type="text/javascript">
+
+    const myFunction=()=>{
+        var a = inp.value;
+         
+   if ( a == 39 || a < 39) {
+
+    Display.innerText = "Fail";
+   }
+   else if ( a == 49 ||  a < 49 ) {
+
+   Display.innerText = "Poor";
+   }
+   else if ( a == 59 ||  a < 59 ) {
+
+   Display.innerText = "Average";
+   }
+   else if ( a == 69 ||  a < 69 ) {
+
+  Display.innerText = "Good";
+  }
+   else if ( a == 70 || a > 70) {
+  Display.innerText = "Excellent";
+  }
+
+}
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <input type="text" id="item1"  placeholder="first" type="number">
+          <input type="text" id="item2"  placeholder="second" type="number">
+          <input type="text" id="item3"  placeholder="answer" type="number">
+          <button onclick="add()">+</button>
+          <button onclick="subtract()">-</button>
+          <button onclick="divide()">/</button>
+          <button onclick="multiply()">*</button>
+
+          <script type="text/javascript">
+            const add = ()=>{               
+               item3.value=  Number (item1.value) + Number (item2.value);
+            }
+              const subtract = ()=>{
+                item3.value=  Number (item1.value) - Number (item2.value);
+              }
+               const divide = ()=>{
+                item3.value= Number (item1.value) /  Number (item2.value);
+               }
+               const multiply = ()=>{
+                item3.value=  Number (item1.value) * Number (item2.value);
+               }
+               
+       </script>
+   
+</body>
+</html>

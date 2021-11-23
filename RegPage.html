@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body{
+        margin: 0;
+    }
+     #gif1{
+         margin-left: 100px;
+     }
+     #div1{
+         width: 1154px;
+         height: 40px;
+         background-color: rgb(245,245,245);
+         margin-left: 100px;
+         margin-top: 20px;
+         padding: 8px;
+     }
+     h5{
+         color: white;
+         font-size: 0.9em;
+     }
+     nav{
+        margin-left: 400px;
+        margin-top: -10px;
+     }
+     nav ul{
+        list-style-type: none;
+     }
+     nav ul li{
+        display: inline;
+        margin-left: 20px;
+     }
+     nav ul li a{
+    color: rgb(85, 84, 84);
+    font-size: 1.4em;
+    text-decoration: none;
+     }
+     #ip1{
+       width: 450px;
+       height: 40px;
+     }
+#btn1{
+    width: 150px;
+    height: 48px;
+    color: white;
+    background-color: rgb(228,129,28);
+    border: 3px solid white;
+    border-radius: 5px ;
+    font-size: 1.2em;
+}
+#images{
+    width: 30px;
+    height: 20px;
+}
+#btn2{
+  width: 150px;
+  height: 48px;
+  border: 2px solid white;
+}
+#div2{
+    margin-top: 60px;
+    margin-left: 100px;
+    border-bottom: 1px solid rgb(216, 211, 211);
+}
+h2{
+    font-size: 2.1em;
+    text-align: center;
+    color: rgb(121, 112, 112);
+}
+#div3{
+    margin-left: 200px;
+    width: 1100px;
+    height: 50px;
+    background-color: rgb(255,193,8);
+}
+#btn2{
+    margin-left: 10px;
+    margin-top: 40px;
+    background-color: rgb(30,57,128);
+    color: white;
+}
+    /* h2{ */
+    /* margin-top: 100px; */
+     /* text-align: center; */
+    /* font-size: 3em;
+    animation-name: grad;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode:backwards; */
+    /* } */
+    h3{
+        text-align: center;
+    }
+    details{
+        margin-top: 10px;
+    }
+    input{
+        margin-top: 20px;
+        width: 300px;
+        height: 30px;
+    }
+    label{
+        font-size: 1.5em;
+        margin-left: 40px;
+    }
+
+
+header{
+    position: fixed;
+    width: 1550px;
+    height: 80px; 
+    text-decoration: none;
+    background-color: rgb(255,148,0);
+    /* background-color: rgb(39,96,118); */
+    margin-top: -20px;
+}
+header nav{
+    margin-left: 400px;
+}
+header nav ul{
+    list-style-type: none;
+}
+header nav ul li{
+   display: inline;
+    margin: 0 10px 0 10px;
+}
+header nav ul li a{
+    color: white;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+fieldset{
+     margin-top: 30px;
+}
+ @keyframes grad{
+     0%{
+         background: linear-gradient(rgb(36,126,255), rgb(190, 122, 122));
+     }
+     25%{
+        background: linear-gradient(rgb(36,126,255), rgb(253,60,84));
+    }
+    50%{
+        background: linear-gradient( rgb(17,111,252), skyblue,);
+    }
+    100%{
+        background: linear-gradient(rgb(36,126,255), rgb(190, 81, 81));
+    }
+ }
+
+legend{
+    font-size: 2em;
+    color: white;
+    background-color: indigo;
+}
+button{
+    width: 150px;
+    height: 40px;
+    margin-left: 30px;
+    margin-top: 20px;
+    font-size: 2em;
+    background-color: indigo;
+    color: white;
+}
+    </style>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="">Products</a></li>
+                    <li><a href="">Templates</a></li>
+                    <li><a href="">Store</a></li>
+                    <li><a href="">Business</a></li>
+                    <li><a href="">Premium</a></li>
+                    <li><a href="">Support</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <header> <img src="jumia/EC9631EB-D46F-456B-A7DD-F7B4F24C8870.gif" alt="" id="gif1"> </header>
+
+        <div id="div1">
+         <h5 style="color: rgb(121, 112, 112);">Sell on JAYSMART BRAND</h5>
+         <nav>
+             <ul>
+                 <li><a href="">PAY</a></li>
+                 <li><a href="">FOOD</a></li>
+                 <li><a href="">PARTY</a></li>
+                 <li><a href="">NOW 🔐</a></li>
+             </ul>
+         </nav>
+        </div>
+  
+        <div id="div2">
+            <div>
+                <h2 style="background-color: rgb(228,129,28); margin-left: -100px; margin-top: 30px;">JaySmart Brand Festival🎉👋🏼</h2>
+            </div>
+            <!-- <img src="jumia/Capture.PNG" alt=""> -->
+            <input type="text" name="" id="ip1" placeholder="Search products, brands and categories">
+            <button onclick="FirstFunction()" id="btn1">Search</button>
+            <button id="btn2">  <img src="jumia/download (3).png" alt="" id="images">Acc</button>
+            <button id="btn2">  <img src="jumia/download (4).png" alt="" id="images"> Help</button>
+            <button id="btn2"> <img src="jumia/download.png" alt="" id="images"> Cart</button>
+        </div>
+
+        <section>
+                 <h2 style="margin-top: 40px;">REGISTRATION PAGE</h2>
+                 <div>
+                    <h1><a href="LoginPage.html" style="text-decoration: none; margin-left: 620px;">Login into your Smart Account</a></h1>
+                    <h3>Create your Smart customer account in just a few clicks! You can register 
+                        either using your e-mail address or through your Facebook account.
+                 </h3>
+                 <h1><a href="LoginPage.html" style="text-decoration: none; margin-left: 630px;">Create an account via E-mail</a></h1>
+            </div>
+           <fieldset>
+               <legend align="center">Personal Information</legend>
+                <div id="detail">
+                    <label for="">First Name:</label>
+                    <input type="text" maxlength="10" minlength="3" placeholder="Enter First Name" id="ip1"> <br>
+                    <label for="">Last Name:</label>
+                    <input type="text" id="ip2" maxlength="10" minlength="3" placeholder="Enter Middle Name"> <br>
+                    <label for="">UserName:</label> 
+                    <input type="text" maxlength="10" minlength="3" placeholder="Enter Last Name" id="ip3"> <br>
+                    <label for="">Email:</label>
+                    <input type="email"  placeholder="Ex.jaysmart@gmail.com" id="ip4" style="width: 350px;"> <br>
+                    <label for="">Password:</label>
+                    <input type="password" id="ip5" placeholder="Strong password">  <br>
+                    <label for="">Confirm Password:</label>
+                    <input type="password" id="ip6" placeholder="Strong password"> <br>
+               </div>
+
+     <hr>
+               <div style=" font-size: 1.3em;">
+                <legend style="text-align: center;">Mode of Operation</legend>
+                <!-- <select name="" id="opt1" style="width: 200px; height: 30px;">
+                    <option value="">Empty</option>
+                    <option value="">BUYER</option>
+                    <option value="">SELLER</option>
+                </select> -->
+                <input type="text" id="mode" style="margin-left: 600px;" placeholder="Buyer/Seller">
+               </div>
+
+               </legend>
+               <hr>
+
+       <button onclick="myFunction()">Submit</button>
+
+           </fieldset>
+
+        </section>
+
+    <script type="text/javascript">
+      let myArr = [];
+
+        let RegDetails = {        Firstname: ip1.value, 
+                                  LastName: ip2.value,
+                                  UserName: ip3.value,
+                                  Email: ip4.value,
+                                  Password: ip5.value,
+                                  ConfirmPassword : ip6.value
+                                  }
+      
+                              myArr.push(RegDetails);
+                                  localStorage.setItem("myDetails", JSON.stringify(myArr))
+  
+
+     
+     const myFunction=()=> {
+
+              let a = localStorage.getItem("RegDetails");
+              let b = JSON.parse(a);
+      
+         let reg = /mode.value/i;
+
+        if ( ip1.value == "" && ip2.value == "" && ip3.value == "" || ip4.value == "") {
+            alert("Please fill every required details")
+         }
+         else if ( ip5.value == "" && ip6.value == "") {
+             alert("Fill in your password")
+         }
+        else if ( ip6.value == "" ) {
+             alert("Confirm your password")
+         }
+        else if ( ip5.value !== ip6.value) {
+             alert("Incorrect Password")
+         }
+       else if ( mode.value === "BUYER" ||  mode.value === "Buyer"  || mode.value === "buyer" || mode.value === "seller"  || mode.value === "SELLER"  || mode.value === "Seller") {
+            location.href = 'LoginPage.html';
+         }
+
+        //  let Reg = /b.Email/;
+        //     let testvalue = ip4.value.replace(Reg, "choose another email");
+        //      alert( testvalue + "Already Exist")
+
+
+}
+
+        </script>
+</body>
+</html>

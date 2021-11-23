@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="" id="ip1">
+    <input type="text" name="" id="ip2">
+    <input type="text" name="" id="ip3">
+    <input type="text" name="" id="ip4">
+
+    <button onclick="save()">save</button>
+    <button onclick="display()">fetch</button>
+
+  <script>
+
+          const save=()=>{
+            var a = ip1.value;
+            var b = ip2.value
+            var c = ip3.value
+            var d = ip4.value
+
+            obj = {}
+            obj.name = a;
+            obj.school = b;
+            obj.dept = c;
+            obj.address = d;
+
+            localStorage.myStore = JSON.stringify(obj);
+            // console.log(localStorage.myStore);
+          }
+        const display =()=> {
+            var ab =JSON.parse(localStorage.myStore)
+            alert(ab.school);
+
+        }
+    </script>
+</body>
+</html>

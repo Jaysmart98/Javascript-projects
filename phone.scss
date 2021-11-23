@@ -1,0 +1,62 @@
+#phonebg{
+    background-image: url(images/download\ \(15\).jfif);
+    border: 6px solid black;
+    height: 440px;
+    width: 250px;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 50px;
+    #voucher{
+        background-color: plum;
+        padding: 10px 15px;
+        display: none;
+        height: 420px;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        input{
+
+            width: 50px;
+        }
+        button{
+            border: 3px purple;
+
+        }
+        
+    }
+    #showtime{
+        color: black;
+        background-color: white;
+        height: 20px;
+    }
+    #icons{
+        margin-top: 360px ;
+        padding: 10px;
+        img{
+            width: 35px;
+            height: 35px;
+            border-radius: 6px;
+            padding: 0;
+        }
+    }
+    #dialer{
+        background-color: white;
+        display: none;
+        height: 440px;
+        input{
+            margin-top: 200px;
+            width: 243px;
+            border: none;
+            text-align: center;
+        }
+        #row1{
+            margin-left: 40px;
+            button{
+                padding: 15px 15px;
+                margin-right: 20px;
+                border: none;
+                margin-bottom: 10px;
+            }
+        }
+
+    }
+}

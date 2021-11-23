@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        button{
+            background-color: red;
+            color: #ffff;
+            width: 100px;
+            height: 50px;
+
+        }
+    </style>
+    <button onclick="myFunction()" id="btn1">First btn</button>
+    <button onclick="myFunction()" id="btn2">Second btn</button>
+
+      <script type="text/javascript">
+         const myFunction = () => {
+            if (btn1.innerText== 'First btn') {
+                btn1.innerText= 'Joshua';
+            }
+            else if (btn2.innerText == 'Second btn'){
+                btn2.innerText = 'Joshua';
+            }
+        }
+      </script>
+</body>
+</html>

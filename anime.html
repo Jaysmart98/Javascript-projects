@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        canvas{
+            background-color: rgb(177, 177, 190);
+            border: 3px solid black;
+            width: 600px;
+            height: 500px;
+            margin-left: 300px;
+        }
+        button{
+            background-color: red;
+            color: white;
+        }
+    </style>
+    <input type="text" id="ip1">
+          
+    <button onclick="myFunctS">SLOW</button>
+    <button onclick="myFunctF">FAST</button>
+    <canvas id="MyCan">
+    </canvas>
+    
+    <script type="text/javascript">
+    
+    var pencil = document.getElementById("MyCan").getContext('2d');
+    var Xaxis = 10;
+                
+           function moveLine(){
+            pencil.clearRect( 0, 0, Xaxis, 500);
+            pencil.moveTo( Xaxis, 0);
+            pencil.lineTo( Xaxis,600);
+            pencil.stroke();
+
+            setTimeout(clearCanvas, 1000)
+            Xaxis += 10;
+           }
+
+           function clearCanvas(){
+            pencil.clearRect( 0, 0, Xaxis, 500);
+            setTimeout(moveLine, 1000)
+           }
+           moveLine();
+
+        //    const myFunctF=()=>{
+      
+        //     setTimeout(clearCanvas, 100)
+        //     Xaxis += 10;
+        //        setTimeout(moveLine, 300)
+        //    }
+
+        //    const myFunctF=()=>{
+        //     setTimeout(moveLine, 1000)
+        //     }
+        //    var i = 0;
+              
+        
+           
+            // var i = 0;
+            // function counter(){
+            //     i++;
+            //     ip1.value = 
+            // }
+
+            // pencil.clearRect( 600, 500, 60, 60);
+
+    </script>
+</body>
+</html>

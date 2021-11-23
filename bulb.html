@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=??, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="i-stock/bulb-off.jpeg" alt="" height="200px" width="200px" id="bulb">
+    <button onclick="switchbulb()">on</button>
+
+    <script type="text/javascript">
+    const switchbulb = ()=>{
+        if (btn.innerText == 'on'){
+                bulb.src = 'bulb-on.jpeg';
+                btn.innerText= "off";
+            }
+            else{
+                btn.innerText = 'on'
+                bulb.src = 'bulb-off.jpeg';
+            }
+    }
+    </script>
+</body>
+</html>

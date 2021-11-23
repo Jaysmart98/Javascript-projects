@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(3, 3, 54);">
+
+          <style>
+              button{
+                  margin: 20px;
+                  width: 200px;
+                  height: 40px;
+                  color: white;
+                  background-color: rgb(255, 81, 0);
+                  font-size: 1.1em;
+              }
+              legend{
+                  text-align: center;
+                  color: white;
+                  width: 200px;
+                  font-size: 1.5em;
+                  background-color: rgb(219, 89, 49);
+              }
+              table{
+                  background-color: rgb(100, 98, 98);
+                  color: white;
+                  width: 500px;
+                  height: 150px;
+                  margin-top: 20px;
+              }
+              fieldset{
+                  background-color: rgb(3, 3, 54);
+              }
+              input{
+                  margin: 10px;
+                  width: 300px;
+                  height: 30px;
+                  color: black;
+                  font-size: 1.2em;
+                  background-color: rgb(223, 222, 222);
+              }
+              #sucess{
+                   color: white;
+                   font-size: 1.3em;
+              }
+          </style>
+          
+          <fieldset>
+              <legend>USER END</legend>
+              
+            <input type="text" name="" id="ip1" placeholder="name of good">
+            <input type="text" name="" id="ip2" placeholder="quantity">    
+            <br>
+
+            <button onclick="myFunct()">Request for Good</button>
+            <button onclick="myFunction()" id="btn1">Purchase!</button>
+            <button onclick="myFunctn()">Cancel Order</button>
+            <br>
+
+            <div id="sucess"></div>
+            <table border="5" width="300px" height="100px">
+              <tr> 
+                  <th>S/N</th>
+                  <td>Name</td>
+                  <th>Quantity</th>
+                  <th>price</th>
+                  <th>File</th>
+              </tr>
+              <tr>
+                  <td> <div id="numb"></div>1</td>   
+                  <td> <div id="Naam"></div>Tecno</td>
+                  <td> <div id="Quant"></div> </td>
+                  <td> <div id="Price"></div>100000</td>
+                  <td> <div id="Picture"></div> </td>
+              </tr>
+          </table>
+          </fieldset>
+          
+    <script type="text/javascript">
+
+const myFunctn=()=>{
+               Quant.innerHTML = "";
+               Price.innerHTML = "";
+   }
+
+   const myFunction=()=>{
+    if ( ip1.value === "" && ip2.value === ""){
+                 alert("Please fill every required details")
+          }
+          else if( ip1.value !== "" && ip2.value !== ""){
+            sucess.innerText = "Good purchased Sucessfully!";
+          }
+    }
+
+    const myFunct=()=>{
+
+        var arr = localStorage.serial
+        for ( var i = 0; i < arr.length;) {
+            if( ip1.value === "" && ip2.value === ""){ 
+                numb.innerHTML += ""; 
+            }
+            else{
+                numb.innerHTML += ( " " + arr[i] + "<br>");
+            }
+            i++;
+        }
+
+        var myObj = [ 
+             { thename: JSON.stringify(Nam.innerHTML), 
+               quant: JSON.stringify(Quantity.innerHTML),
+            //    price: ip3.value,
+            //    picture: ip5.value
+            }
+        ]
+
+        for ( var  i = 0;  i < myObj.length;  i++) {
+          if ( ip1.value == "" || ip2.value == "" ){
+              naam.innerHTML = "";
+
+          }
+          else {
+               naam.innerHTML += myObj[i].name  + "<br>";
+               Quantity.innerHTML += myObj[i].quant  + "<br>";
+               Price.innerHTML +=  myObj[i].quantity*100000  + " <br>";
+               img.innerHTML += JSON.parse(localStorage.img)  + " <br>";
+          }
+        }
+    }
+    </script>
+</body>
+</html>

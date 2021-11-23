@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <style>
+            body{
+                background-color: tomato;
+            }
+            #container{
+               margin-left: 300px;
+               border: 1px solid black;
+               width: 700px;
+               height: 200px;
+               background-color: black;
+            }
+            input{
+                width: 150px;
+                height: 40px;
+                color: black;
+                background-color: white;
+                font-size: 1.5em;
+                text-align: center;
+            }
+            button{
+                margin-left: 40px;
+                margin-top: 30px;
+                width: 100px;
+                height: 30px;
+                color: white;
+                background-color: tomato;
+                font-size: 1.2em;
+            }
+
+            h2{
+                color: white;
+                font-size: 2em;
+                text-align: center;
+            }
+        </style>
+
+        <div id="container">
+              <h2>STOPWATCH</h2>
+            <input type="text" id="hours" value="0" style="margin-left: 30px;">
+            <input type="text" id="minutes" value="0">
+            <input type="text" id="seconds" value="0">
+            <input type="text" id="milsecond" value="0">
+            <br>
+    
+            <button onclick="start()" style="margin-left: 80px;">Start</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="lap()">Laps</button>
+            <button><a href="" style="text-decoration: none; color: white;">Reset</a></button>
+            <div id="res"></div>
+    
+
+        </div>
+      
+
+
+        <script>
+
+                var Time;
+                var MILSECOND = milsecond.value;
+                var SECONDS = seconds.value;
+                var MINUTES = minutes.value;
+                var HOURS = hours.value;
+
+    const start=()=> {
+                    if(Time){
+                        return;
+                    }else{
+                        Time = setInterval(count, 10);
+                    }
+                }
+                const count=()=> {
+                    var count = milsecond.value;
+                    count++;
+                    milsecond.value = count;
+                    parseInt(SECONDS);
+                    parseInt(MINUTES);
+                    parseInt(HOURS);
+
+                    if(milsecond.value == 99){
+                        milsecond.value = 0;
+                        SECONDS++;
+                        seconds.value = SECONDS;
+                    }
+                    if (sec.value == 60) {
+                        milsecond.value = 0;
+                        seconds.value = 0;
+
+                        MINUTES++;
+                        seconds.value = sectime;
+                        minutes.value = mintime;
+                    }
+                    if (minutes.value == 60) {
+
+                        seconds.value = 0;
+                        minutes.value = 0;
+                        SECONDS++;
+                        MINUTES++;
+                        hrtime++;
+                        seconds.value = SECONDS;
+                        minutes.value = MINUTES;
+                        hours.value = HOURS;
+                    }
+                }
+
+            const pause=()=> {
+                    clearInterval(Time);
+                    Time = undefined;
+                }
+            const lap=()=> {
+                    var timer = HOURS + ":" + MINUTES + ":" + SECONDS + ":" + MILSECOND;
+                    res.innerHTML += timer + '<br>';
+                }
+
+        </script>
+    </body>
+</html>

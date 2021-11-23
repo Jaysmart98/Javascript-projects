@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parametized function</title>
+</head>
+<body>
+    <button onclick="myFunc('Taiwo', 2)">First</button>
+    <button onclick="myFunc('Kenny', 5)">Second</button> 
+    <!-- Messages must be of the same number in both functions else it shows undefined-->
+
+    <script>
+        // function myFunc(message= 1, secondVal= 2) { `You can set a default value instead. It uses it if there is no value from user`
+        //     alert("My name is "+message+" from SQI, I'm "+secondVal+"");
+        // }
+
+        // Return keywords
+        var myFunc = function(val){
+            return val*2;
+        }
+        alert("My name is Taiwo, I am "+myFunc(7)+" with "+myFunc(4)+" years of experience");
+    </script>
+
+</body>
+</html>

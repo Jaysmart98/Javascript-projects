@@ -1,0 +1,235 @@
+ *, *::after, *::before{
+     box-sizing: border-box;
+ }
+
+ :root {
+   --cell-size: 100px;
+   --mark-size: calc(var(--cell-size)* .9);
+ }
+
+body{
+    margin: 0;
+    background-color: rgb(16, 7, 95);
+}
+
+/* section{
+    border: 10px solid black;
+    background: linear-gradient(red, black);
+    height: 700px;
+} */
+
+h2{
+     margin-left: 140px;
+    font-size: 2.4em;
+    color: white;
+}
+input{
+    margin-left: 630px;
+    background-color: burlywood;
+    font-size: 1.3em;
+    margin-top: -20px;
+}
+ 
+.board {
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    /* position: fixed; */
+    margin-left: -500px;
+    margin-top: -340px;
+}
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid rgb(107, 105, 105);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+    border-bottom: none;
+}
+
+.cell.x,
+.cell.circle{
+    cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before {
+  background-color: rgb(255, 255, 255);
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+background-color: blue;
+}
+
+
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::before,
+.board.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size)* .15);
+    height: var(--mark-size);
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:hover::after{
+    transform: rotate(-45deg);
+}
+
+.cell.circle::before,
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    content: '';
+    position: absolute;
+   border-radius: 50%;
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after {
+    width: calc(var(--mark-size)* .7);
+    height: calc(var(--mark-size)* .7);
+    background-color: rgb(16, 7, 95);
+}
+.winning-message.show {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background-color: rgba(0, 0, 0, .9); */
+    background-color: rgba(70, 68, 68, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+
+.winning-message button {
+    font-size: 3rem;
+    /* background-color: rgb(252, 101, 1); */
+    background-color: rgb(170, 168, 168);
+    border: 1px solid darkblue;
+    padding: .25em .5em;
+    cursor: pointer;
+    margin-top: -16px;
+    margin-left: 120px;
+    color: black;
+}
+.winning-message button:hover {
+    background-color: blue;
+    color: white;
+    border-color: white;
+}
+.winning-message.show {
+    display: flex;
+}
+
+
+
+#text {
+    margin-left: 130px;
+}
+#btn{
+    font-size: 1.5em;
+    background-color: blue;
+    /* border: 1px solid white; */
+    padding: .25em .5em;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    margin-left: 750px;
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+} 
+   #btn:hover{
+    background-color: darkblue;
+    color: white;
+    border-color: black;
+}
+
+.score{
+     color: white;
+     margin-left: 640px;
+     text-align: center;
+     font-size: 5em;
+     margin-top: -100px;
+     position: fixed;
+     display: flex;
+     background-color: rgb(7, 7, 184);
+     width: 400px;
+     text-indent: 70px;
+}
+#ip1{
+    background-color: white;
+    margin-left: 700px;
+    height: 50px;
+    width: 300px;
+    margin-top: -80px;
+}
+#ip2{
+    background-color: white;
+    margin-left: 700px;
+    margin-top: 3px;
+    height: 50px;
+    width: 300px;
+}
+
+#alert{
+   color: black;
+   margin-left: 120px;
+   margin-top: 30px;
+}
+#alert1{
+    color: white;
+    font-size: 1.3em;
+    margin-left: 640px;
+}
+
+#alert2{
+    color: white;
+    font-size: 1.3em;
+    margin-left: 640px;
+}

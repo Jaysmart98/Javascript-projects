@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOPWATCH</title>
+</head>
+<style>
+    #head{
+        background-color: red;
+        height: 65px;
+        padding-top: 10px;
+        text-align: center;
+        color: white;
+    }
+    #watchArea{
+        padding-top: 55px;
+        text-align: center;
+    }
+    #foot{
+        margin-top: 500px;
+        text-align: center;
+        padding-top: 20px;
+        font-family: cursive;
+}
+    #wholetimer{
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    img{
+        height: 40px;
+        width: 40px;
+        margin-right: 40px;
+        display: flex;
+    }
+    
+</style>
+
+<body>
+    <div id="head">
+        <img src="clock4.png" alt="">
+        <span>Stopwatch</span>
+    </div>
+    <div id="watchArea">
+        <div id="wholetimer">
+            <span >00 : 00 : 00 : <span id="millitimer">00</span> </span>
+        </div>
+
+        <div id="images">
+            <div id="resetDiv" onclick="pauseFunc()">
+                <img src="reset1.png" alt=""1.reset1.png id="reset" >
+            </div>
+            <div id="startDiv"onclick="startFunc()" >
+                <img src="play2.png" alt="" id="start" >
+            </div>
+        </div>
+    </div>
+    <div id="foot"> 
+        <span>Developed by JANET</span>
+    </div>
+
+    <script>
+        // var d = new Date();
+        // var mil = d.getMilliseconds();
+        // var sec = d.getSeconds();
+        // var min = d.getMinutes();
+        // var hr = d.getHours();
+        // var timer = hr + ":" + min + ":" + sec + ":" + mil;
+        // function playFunc() {
+        //     document.getElementById("wholetimer").innerHTML = timer;
+        // }
+
+        var myTime;
+                var miltime = milsec.value;
+                var sectime = sec.value;
+                var mintime = min.value;
+                var hrtime = hour.value;
+                function startFunc() {
+                    if(myTime){
+                        return;
+                    }else{
+                        myTime = setInterval(count, 10);
+                    }
+                }
+                function count() {
+                    var count = milsec.value;
+                    count++;
+                    milsec.value = count;
+                    parseInt(sectime);
+                    parseInt(mintime);
+                    parseInt(hrtime);
+
+                    if(milsec.value == 99){
+                        milsec.value = 0;
+                        sectime++;
+                        sec.value = sectime;
+                    }
+                    if (sec.value == 60) {
+                        milsec.value = 0;
+                        sec.value = 0;
+                        // sectime++;
+                        mintime++;
+                        sec.value = sectime;
+                        min.value = mintime;
+                    }
+                    if (min.value == 60) {
+                        // milsec.value = 0;
+                        sec.value = 0;
+                        min.value = 0;
+                        sectime++;
+                        mintime++;
+                        hrtime++;
+                        sec.value = sectime;
+                        min.value = mintime;
+                        hr.value = hrtime;
+                    }
+                }
+                function pauseFunc() {
+                    clearInterval(myTime);
+                    myTime = undefined;
+                }
+                function lapFunc() {
+                    var timer = hrtime + ":" + mintime + ":" + sectime + ":" + miltime;
+                    document.getElementById("lapdisplay").innerHTML += timer + '<br>';
+                }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="tic-tac.css">
+    <script src="tic-tac.js" defer></script>
+</head>
+<body>
+    <section>
+        <h2>TIC-TAC-TOE</h2>
+        
+        <input type="text" placeholder="Player1" id="ip1">
+        <input type="text" placeholder="Player2" id="ip2">
+        <button onclick="myFunction()" id="btn">Start</button>
+
+        <div id="alert">
+            <div id="alert1"></div>
+            <div id="alert2"></div>
+        </div>
+
+
+      <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+    </div>
+
+    <div class="winning-message" id="winningMesssage">
+        <div data-winning-message-text id="text"></div>
+        <button id="restartButton">Restart</button>      
+   </div> 
+    </section>
+
+    <div class="score">
+        <div id="score1">0</div> 
+        <div id="score1">    -</div>
+        <div id="score1">    0</div>
+    </div>
+
+</body>
+</html>

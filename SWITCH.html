@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <style>
+              section{
+                  width: 400px;
+                  height: 400px;
+                  border: 3px solid red;
+                  border-radius: 5px;
+                  margin-top: 100px;
+                  margin-left: 400px;
+                  background-color: rgb(251,251,251);
+              }
+              #ON-Bulb{
+                  margin-left: 70px;
+                  margin-top: 30px;
+                  position: absolute;
+              }
+              #Off-Bulb{
+                  margin-left: 70px;
+                  margin-top: 30px;
+                  position: absolute;
+              }
+              #btn{
+                  background-color: red;
+                  color: white;
+                   width: 150px;
+                   height: 40px;
+                   margin-left: 120px;
+                   margin-top: 250px;
+              }
+          </style>
+      <section>
+          <div>
+              <div id="bulb"></div>
+              <img src="i-stock/Tiktok.jpeg" alt="" id="ON-Bulb" onclick="myFunction()">
+              <img src="i-stock/Tiktok.jpeg" alt="" id="Off-Bulb" onclick="myFunction()">
+              <button onclick="myFunction()" id="btn">ON</button>
+          </div>
+      </section>
+
+      <script src="switch.js"></script>
+</body>
+</html>

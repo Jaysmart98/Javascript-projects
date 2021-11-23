@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LOCAL STORAGE</title>
+    </head>
+    <body>
+        <!-- JSON - JavaScript Object Notation 
+            Local storage is needed to store values that will be needed in other pages. It stores it in the browser
+            JSON.parse is used to convert objects back to their normal states i.e. to string -->
+
+        <input type="" id="firstname" name="">
+        <input type="" name="" id="lastname">
+        <select name="" id="gender">
+            <option  value="">Male</option>
+            <option value="">Female</option>
+        </select>
+
+        <button onclick="createFunc()">Create Human</button>
+            <script>
+                // localStorageetItem('value', [3, 5, 6]);
+    
+
+                class Human {
+                    constructor (){
+                        this.first = firstname.value;
+                        this.last = lastname.value;
+                        this.eyes = 2;
+                        this.nose = 1;
+                        
+                    }
+                }
+                class man extends Human{
+                    Voice = "Thick";
+                    Beards = "Yes";
+                }
+                class woman extends Human{
+                    Voice = "Thin";
+                    Beards = "NO";
+                }
+            
+               f
+                // console.log(man.first);
+
+                const createFunc = ()=>{
+                    let a = document.getElementById("firstname").value;
+                    let b = document.getElementById("lastname").value;
+                    if(gender.value == "Male"){
+                        console.log(man);
+
+                    }
+                    else{
+                        console.log(woman);
+    
+                    }
+
+                }
+                
+            </script>
+    </body>
+</html>

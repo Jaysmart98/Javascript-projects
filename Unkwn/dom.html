@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <!-- DOM means  Document Object Model. Everytime a page is opened, JS creates a DOM. Each element  in the html is calle a node-->
+
+    <div style="background-color: aliceblue; height: 30vh; width: 60vw; margin-bottom: 20px;" id="myDiv"></div>
+    <input type="color" name="" id="myInput"> <br>
+    <button id="btn" onclick="changeColor()">Click me!</button>
+    <span id="colorOutput"></span>
+
+
+    <script>
+        function changeColor() {
+            // var colorBtn = document.getElementById('btn');
+            var colorInput = document.getElementById("myInput").value;
+            document.getElementById('colorOutput').innerHTML = colorInput;
+            document.getElementById('myDiv').style.backgroundColor = colorInput;  `CSS properties are accessed using the standard casing in JS`
+        }
+        // colorBtn.onclick = function(){
+        //     alert ("Called")
+        // }
+// Query selector, form filling involving changing hidden password to text, selecting elements by tagname, multi-dimension array
+
+    </script>
+</body>
+</html>

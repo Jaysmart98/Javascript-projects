@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Practice</title>
+    </head>
+    <style>
+        #back{
+            width: 35vh;
+            height: 50vh;
+            background-color: aliceblue;
+            margin-right: 50px;
+            float: left;
+        }
+        #btn{
+            padding: 20px 15px;   
+        }
+
+    </style>
+
+    <body>
+        <div id="back"></div> <br>
+        <input type="color" id="colorInput"> 
+        <button id="btn" onclick="colorFunc()" >Change Color!</button>
+        <span id="colorEffect"></span> 
+
+        <script>
+            function colorFunc() {
+                var color = document.getElementById("colorInput").value;
+                document.getElementById("colorEffect").innerHTML = color;
+                document.getElementById("back").style.backgroundColor = color;
+            }
+
+
+
+
+
+
+
+
+
+
+
+        //    for(i = 1; i <=10; i++){
+        //     if (i % 5 == 0) {
+        //          break;
+        //     }
+        //     else{
+            //   document.getElementById("output").innerHTML += i +"Perfect!" + "<br>"
+        //     }
+        //    }
+
+        //    function myFunc(a, b) {
+        //        var bold = a * b;
+        //        return bold;
+        //    }
+
+
+        //    var clear = bold - 3;
+        //    console.log(clear);
+
+        //    function declare(a, b) {
+        //        console.log(myFunc(a, b));
+        //     }
+        //     declare(3, 7);
+
+
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="I+E=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canv" style="height: 900px; width: 900px; border: 2px solid #000;"></canvas>
+    <!-- <button onclick="myFunc(event)">Btn</button> -->
+    <button onclick="eraseFunc()">Eraser</button>
+    <!-- <button onmouse></button> -->
+
+    <script>
+
+        // Event target
+        // const myFunc = e => {
+            // e.target.innerHTML = 'welcome';
+        // }
+
+        let ctx = document.getElementById("canv").getContext('2d');
+        let x = 150;
+        let y = 150;
+        let myRadius = 15;
+        let newLocation = x;
+        for (let i = 0; i< 10; i++) {
+            ctx.moveTo(x+ myRadius, 150);
+            ctx.arc(x, y, 15, 0, Math.PI*2, true);
+            ctx.stroke();
+        }
+
+
+
+        let startX, startY, endX, endY;
+        let erase;
+        canv.addEventListener('mousedown', event =>{
+            // alert('hi');
+            startX = event.x - 8;
+            startY = event.y -8;
+           
+        });
+        
+        canv.addEventListener('mouseup', event =>{
+            endX = event.x -8;
+            endY = event.y -8;
+            // if (erase) {
+            //     ctx.moveTo(startX, startY);
+            //     ctx.lineTo(endX, endY);
+            //     ctx.stroke();  
+            // }
+            // else{
+            //     ctx.clearRect(startX, startY, endX-startX, endY-startY);
+            //     erase= false;
+            // }
+            // console.log(startX, startY, endX, endY)
+        });
+
+
+        const eraseFunc = () =>{
+            erase =true;
+        }       
+        
+        
+        // Drawing a straight line
+        // ctx.moveTo(50, 50);
+        // ctx.lineTo(100, 100);
+        // ctx.lineTo(200, 50);
+        // ctx.lineTo(60, 60);
+        // ctx.stroke();
+
+        // Drawing a rectangle
+        // To give color to the canvas
+        // ctx.fillStyle = 'blue';
+        // ctx.strokeRect(30, 30, 70, 70);
+        // ctx.fillRect(30, 80, 70, 70);
+
+        // Drawing a circle
+        ctx.arc(10, 10, 5,  Math.PI*2);
+        ctx.stroke();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+#phonebg {
+  background-image: url(images/);
+  border: 6px solid black;
+  height: 440px;
+  width: 250px;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#phonebg #voucher {
+  background-color: plum;
+  padding: 10px 15px;
+  display: none;
+  height: 420px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#phonebg #voucher input {
+  width: 50px;
+}
+
+#phonebg #voucher button {
+  border: 3px purple;
+}
+
+#phonebg #showtime {
+  color: black;
+  background-color: white;
+  height: 20px;
+}
+
+#phonebg #icons {
+  margin-top: 360px;
+  padding: 10px;
+}
+
+#phonebg #icons img {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  padding: 0;
+}
+
+#phonebg #dialer {
+  background-color: white;
+  display: none;
+  height: 440px;
+}
+
+#phonebg #dialer input {
+  margin-top: 200px;
+  width: 243px;
+  border: none;
+  text-align: center;
+}
+
+#phonebg #dialer #row1 {
+  margin-left: 40px;
+}
+
+#phonebg #dialer #row1 button {
+  padding: 15px 15px;
+  margin-right: 20px;
+  border: none;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=phone.css.map */

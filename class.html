@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj= {
+        //     name: "Taiwo",
+        //     sayDept(){
+        //         dept = "software";
+        //         console.lod
+        //     }
+        // }
+
+
+        class School{
+            // name = 'SQI';
+            // noOfDepts = 10;
+            constructor (){
+                 // name = 'SQI';
+            // noOfDepts = 10;
+
+                this.name = 'SQI';
+                this.noOfDepts = 10;
+                // console.log('hely');
+            }
+            sayHello(){
+                console.log(`My school is ${this.name}, we have ${this.noOfDepts} departments`);
+            }
+
+        }
+        // Class inheritance 
+        class AnotherSchool extends School{
+            constructor (){
+                super();
+                console.log("yello");
+            }
+            noOfFaculties = 7;
+        }
+
+        let mySchool = new School('SQI', 10);
+        let secondSchool = new AnotherSchool('LAUTECH', 68);
+        secondSchool.anything = "anything";
+        mySchool.sayHello();
+        // console.log(secondSchool);   
+        console.log(mySchool, secondSchool);
+
+        
+        // Method overriding => when a function bearing the same name with another overrides it. A constructor cannot be overridden but if we add
+        // super(), it will work
+
+
+        class church{
+            constructor(){
+            this.name = 'MFM';
+
+            }
+        }
+
+        let ours = new church;
+        console.log(ours.name);
+    </script>
+</body>
+</html>

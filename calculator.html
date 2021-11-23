@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title> 
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+         <main id="body">
+             <div id="circle"></div>
+             <h2 id="text1">SMART CALC</h2>
+             <input class="screen" id="result" placeholder="88888888888888888888888" />
+
+
+               <div id="button2">
+        <button class="btn" style="background-color: white; color: black;"><a href="" id="a1">ON</a></button>
+        <button onclick="clearScreen()" style="background-color: white; color: black;">OFF</button>
+               </div>
+
+        <div id="button">
+                     <button id="btn" onclick="display('7')" type="button">7</button>
+                     <button onclick="display('8')">8</button>
+                     <button onclick="display('9')">9</button></button>
+        <button onclick="del()" style="background-color: yellow; color: black;">Del</button>
+    <button style="background-color: red; color: black;"><a href="" id="a1">AC</a></button>
+                 </div>
+
+                 <div id="button">
+                    <button onclick="display('4')">4</button>4</button>
+                    <button onclick="display('5')">5</button>
+                    <button onclick="display('6')">6</button>
+                    <button onclick="display('*')">*</button>
+                    <button onclick="display('/')">/</button>
+                </div>
+                <div id="button">
+                    <button onclick="display('1')">1</button>
+                    <button onclick="display('2')">2</button>
+                    <button onclick="display('3')">3</button>
+                    <button onclick="display('+')">+</button>
+                    <button onclick="display('-')">-</button>
+                </div>
+                <div id="button">
+                    <button onclick="display('0')">0</button>
+                    <button onclick="display('.')">.</button>
+                    <button onclick="display('x10^x')">x10<sup>x</sup></button>
+                    <button onclick="Answer()">Ans</button>
+                    <button onclick="calculate()"> = </button>
+                </div>
+                <div id="button">
+                    <button onclick="display('tan')">tan</button>
+                    <button onclick="display('cos')">cos</button>
+                    <button onclick="display('sin')">sin</button>
+                    <button onclick="display('(')">(</button>
+                    <button onclick="display(')')">)</button>
+                </div>
+
+                <!-- <footer id="footer">
+                        <div id="solid"></div>
+                       <a href="" id="enter"></a>
+                </footer> -->
+
+         </main>
+
+        <script type="text/javascript"  src="calculator.js"></script>
+                       
+        
+</body>
+</html>

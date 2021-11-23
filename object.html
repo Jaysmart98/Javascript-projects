@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(3, 3, 54);">
+
+          <style>
+              button{
+                  margin: 20px;
+                  width: 200px;
+                  height: 40px;
+                  color: white;
+                  background-color: rgb(255, 81, 0);
+                  font-size: 1.1em;
+              }
+              legend{
+                text-align: center;
+                  color: white;
+                  width: 200px;
+                  font-size: 2.0em;
+                  /* background-color: rgb(219, 89, 49); */
+              }
+              table{
+                  background-color: rgb(113, 115, 145);
+                  color: white;
+                  width: 900px;
+                  height: 150px;
+                  margin-top: 20px;
+              }
+              fieldset{
+                  background-color: rgb(3, 3, 54);
+              }
+              input{
+                  margin: 10px;
+                  width: 300px;
+                  height: 30px;
+                  color: black;
+                  font-size: 1.2em;
+                  background-color: rgb(211, 205, 205);
+              }
+              #sucess{
+                   color: white;
+                   font-size: 1.3em;
+              }
+              a{
+                  text-decoration: none;
+                  color: white ;
+              }
+          </style>
+          
+          <fieldset>
+              <legend style="width: 300PX; height: 40px;">INVENTORY SYSTEM</legend>
+              <legend style="width: 1470px; background-color: rgb(219, 89, 49);">Admin End</legend>
+            <hr>
+
+            <input type="text" name="" id="ip1" placeholder="Name">
+            <input type="text" name="" id="ip2" placeholder="quantity">
+            <input type="text" name="" id="ip3" placeholder="price">        
+            <input type="text" name="" id="ip4" placeholder="Remark">       
+            <input type="file" id="ip5">
+            <br>
+            <hr>
+            <hr>
+            <button onclick="myFunct()">Add Good</button>
+            <button onclick="myFunction()">Display Detail</button>
+            <button onclick="myFunctn()">Delete Good</button>
+            <br>
+            <div id="sucess"></div>
+            <hr>
+            <hr>
+            <table border="5" width="300px" height="100px">
+              <tr> 
+                  <th style="font-size: 1.5em;">S/N</th>
+                  <td style="font-size: 1.5em;">Name</td>
+                  <th style="font-size: 1.5em;">Quantity</th>
+                  <th style="font-size: 1.5em;">price</th>
+                  <th style="font-size: 1.5em;">File</th>
+                  <th style="font-size: 1.5em;">TOTAL</th>
+              </tr>
+              <tr>
+                  <td> <div id="num"></div>  </td>
+                  <td> <div id="Nam"></div> </td> 
+                  <td> <div id="Quantity"></div> </td>
+                  <td> <div id="Price"></div> </td>
+                  <td> <div id="Picture"></div> </td>
+                  <td> <div id="total"></div> </td>
+              </tr>
+    
+          </table>
+          <hr>
+          <hr>
+          </fieldset>
+
+          <button><a href="user.html">User End</a> </button>
+
+
+    <script type="text/javascript">
+
+  
+   const myFunctn=()=>{
+               Nam.innerHTML = "";
+               Quantity.innerHTML = "";
+               Price.innerHTML = "";
+               Picture.innerHTML = "";  
+               num.innerHTML = "";
+               total.innerHTML = "";
+   }
+
+   const myFunct=()=>{
+    if ( ip1.value === "" && ip2.value === "" && ip3.value === "" && ip5.value === ""){
+                 alert("Please fill every required details")
+          }
+          else if( ip1.value !== "" && ip2.value !== ""){
+            sucess.innerText = "Good Details Sucessfully Added!";
+          }
+
+    //   var arr = [];
+    //   var arr = ["*"];
+    //    localStorage.serial = JSON.stringify(arr);
+  
+   
+
+    //     myObj=[];
+    //     localStorage.goodname = JSON.stringify(Nam.innerHTML)
+    //     localStorage.thequantity = JSON.stringify(Quantity.innerHTML)
+    //     localStorage.theprice = JSON.stringify(Price.innerHTML)
+    //     localStorage.thefile = JSON.stringify(Picture.innerHTML)
+    //     localStorage.theTTL = JSON.stringify(total.innerHTML)
+    }
+
+
+
+    const myFunction=()=>{
+
+
+       var arr = ["*"];
+       let arr_serialized = JSON.stringify(arr)
+       localStorage.setItem("arr", arr_serialized)
+       let arr_deserialized = JSON.parse(localStorage.getItem("arr"))
+        for ( var i = 0; i < arr.length;) {
+            num.innerHTML += (arr_deserialized)[i]  + "<br>";
+            i++;
+        }
+   
+
+        let myObj = [{ good: ip1.value, 
+               quantity: ip2.value,
+               price : ip3.value,
+               pics : ip5.value,
+               Total : ip2.value * ip3.value
+            }]
+
+          let myObj_1 = JSON.stringify(myObj.good);
+          let myObj_2 = JSON.stringify(myObj.quantity);
+          let myObj_3 = JSON.stringify(myObj.price);
+          let myObj_4 = JSON.stringify(myObj.pics);
+          let myObj_5 = JSON.stringify(myObj.Total);
+
+          localStorage.setItem("myObj1", myObj_1);
+          localStorage.setItem("myObj2", myObj_2);
+          localStorage.setItem("myObj3", myObj_3);
+          localStorage.setItem("myObj4", myObj_4);
+          localStorage.setItem("myObj5", myObj_5);
+
+          let myObjFIRST = JSON.parse(localStorage.getItem("myObj1"));
+          let myObjSECOND = JSON.parse(localStorage.getItem("myObj2"));
+          let myObjTHIRD = JSON.parse(localStorage.getItem("myObj3"));
+          let myObjFOURTH= JSON.parse(localStorage.getItem("myObj4"));
+          let myObjFIFTH = JSON.parse(localStorage.getItem("myObj5"));
+
+
+        for ( var  i = 0;  i < myObj.length;  i++) {
+          if ( ip1.value == "" || ip2.value == "" ){
+            Nam.innerHTML = "";
+           
+          }
+          else {
+            Nam.innerHTML += myObjFIRST[i] + "<br>";
+            Quantity.innerHTML += myObjSECOND[i] + "<br>";
+            Price.innerHTML += myObjTHIRD[i] + " <br>";
+            Picture.innerHTML += myObjFOURTH[i]  + " <br>"; 
+            total.innerHTML += myObjFIFTH[i] + " <br>";
+          }
+      
+        }
+
+        // let myObj = [{ "good": ip1.value, 
+        //        "quantity": ip2.value,
+        //        "price" : ip3.value,
+        //        "pics" : ip5.value,
+        //        "Total" : ip2.value * ip3.value
+        //     }]
+
+        //   let myObj_1 = JSON.stringify(myObj.good);
+        //   let myObj_2 = JSON.stringify(myObj.quantity);
+        //   let myObj_3 = JSON.stringify(myObj.price);
+        //   let myObj_4 = JSON.stringify(myObj.pics);
+        //   let myObj_5 = JSON.stringify(myObj.Total);
+
+        //   localStorage.setItem("myObj1", myObj_1);
+        //   localStorage.setItem("myObj2", myObj_2);
+        //   localStorage.setItem("myObj3", myObj_3);
+        //   localStorage.setItem("myObj4", myObj_4);
+        //   localStorage.setItem("myObj5", myObj_5);
+
+        //   let myObjFIRST = JSON.parse(localStorage.getItem("myObj1"));
+        //   let myObjSECOND = JSON.parse(localStorage.getItem("myObj2"));
+        //   let myObjTHIRD = JSON.parse(localStorage.getItem("myObj3"));
+        //   let myObjFOURTH= JSON.parse(localStorage.getItem("myObj4"));
+        //   let myObjFIFTH = JSON.parse(localStorage.getItem("myObj5"));
+
+    }
+    
+    </script>
+</body>
+</html>
+
+
+<!--// let myObj_deserialized = JSON.parse(localStorage.getItem("myObj"));
+        
+// localStorage.goodname = JSON.stringify(myObj.good)
+// localStorage.thequantity = JSON.stringify(myObj.quantity)
+// localStorage.theprice = JSON.stringify(myObj.price)
+// localStorage.thefile = JSON.stringify(myObj.pics)
+// localStorage.theTTL = JSON.stringify(myObj.Total)  -->

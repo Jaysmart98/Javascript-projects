@@ -1,0 +1,79 @@
+#body{
+    border: 10px solid black;
+    border-radius: 20px;
+    background-color: rgb(59, 56, 56);
+    height: 600px;
+    width: 300px;
+    margin-left: 300px;
+}
+.screen{
+     width: 250px;
+     height: 100px;
+     /* background-color: wheat; */
+     border-radius: 10px;
+     border: 2px solid black;
+     margin-top: 10px;
+     margin-left: 20px ;
+     font-size: 1.5em;
+}
+#circle{
+    margin-left: 130px;
+    border: 10px solid black;
+    height: 10px;
+    width: 10px;
+    border-radius:30px;
+    margin-top: -10px;
+}
+#text1{
+     color: rgb(202, 164, 106);
+     text-align: center;
+}
+#button{
+    display: flex;
+    margin-top: 60px;
+    width: 300px;
+}
+#button2{
+    display: flex;
+    margin-top: 130px;
+    margin-left: 170px;
+    /* position: fixed; */
+}
+#a1{
+    text-decoration: none;
+}
+
+button{
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    margin-left: 15px;
+    margin-top: -120px;
+}
+#footer{
+    width: 300px;
+    height: 40px;
+    background-color: rgb(104, 99, 99);
+    margin-top: -10px;
+    position: fixed;
+}
+#solid{
+      width: 30px;
+      height: 15px;
+      border-top-right-radius: 10px;
+      border-top: 5px solid black;
+      border-bottom: 5px solid black;
+      border-right: 5px solid black;
+      margin-left: 240px;
+      margin-top: 8px;
+      position: absolute;
+}
+#enter{
+    width: 40px;
+      height: 30px;
+      background-color: black;
+      margin-left: 130px;
+      margin-top: 4px;
+      position: absolute;
+}

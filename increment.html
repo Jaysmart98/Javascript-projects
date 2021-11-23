@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+       <button onclick="myFunction(1, 3)">First BTN</button>
+       <button onclick="myFunction(2, 4)">Second BTN</button>
+       <button onclick="mydel()">Del</button>
+       <div id="result"></div>
+       <!-- <button onclick="myFunction('Joshua')">First BTN</button>
+            <button onclick="myFunction('Kayode')">Second BTN</button>
+            <div id="result"></div> -->
+
+    <script type="text/javascript">
+        const myFunction=(btn, btn1)=>{
+             result.innerText += btn + 2;
+             
+        }
+        const mydel=(btn, btn1)=>{
+             result.innerText = result.innerText.slice (0, -1);
+        }
+    </script>
+</body>
+</html>

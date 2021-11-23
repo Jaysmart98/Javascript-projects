@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // alert(JSON.parse(localStorage.getItem('value')));
+
+        // map, filter, find
+        // You use HOF (Higher Order FUnction) when passing another function into a function as a parameter
+        // WHen map returns a value, it creates another array
+        // foreach does not return an array
+        // When you are using back tick to return a value, you will not include the curly braces
+        // map returns all values back as string
+        // when you use filter, you are checking if a condition is met
+        // When you have a single parameter, you don't have to put it in parantheses, but if
+        // if you have none or more than one, you use parantheses. The first parameter represents the value in the array, the 2nd parameter rep the index 
+        // of the value, the 3rd value rep the whole array
+        // Find returns only the first value that meets the condition. find returns a single value not an array unlike map and filter
+
+
+        const myFunc = (first, second, third) => `${first*2}${second}`; 
+        // let arr = [4, 5, 6];
+        // let b =  arr.map(myFunc);
+        // console.log(b);
+        
+        // const secondFunc = 
+        let arr = [3, 4, 6, 7, 8, 9];
+        let b = arr.filter((first, second) => first > 6 || second < 2); 
+        // console.log(b);
+
+        let listOfStudents = [{
+            id: 001,
+            name: "Taiwo",
+            dept: "software",
+            school: "SQI"
+        },
+    
+        {
+            id: 002,
+            name: "Kenny",
+            dept: "hardware",
+            school: "SQI"
+        },
+        {
+            id: 003,
+            name: "Janet",
+            dept: "Food Science",
+            school: "LAUTECH"
+        }];
+
+     const idFunc =  id => {
+        return listOfStudents.filter(student => student.id == id);
+     };
+     const schoolFunc = school => {
+        return listOfStudents.filter(student => student.school == school).map(std => std.name += " Abidakun");
+        return std;
+     };
+       console.log(idFunc(002));
+       console.log(schoolFunc("SQI"));
+
+    </script>

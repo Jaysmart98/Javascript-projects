@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" name="" id="inputBox">
+        <button onclick="myFunc()">Save</button>
+        <div id="myOutput"></div>
+
+        <script>
+            var box = [];
+
+
+            function myFunc() {
+                box = inputBox.value;
+                // b = document.getElementById("myOutput").innerHTML
+                text = ""
+                for (let i= 1; i <= box; i++) {
+                        if (i % 3 == 0) {
+                            text += "<span style = 'color:yellow'>Fizz Buzz</span>"
+                        
+                        } 
+                        else if (i % 5 == 0) {
+                            document.getElementById("myOutput").innerHTML = "buzz";   
+                        }
+                        else if (i % 5 == 0 && i % 3 == 0) {
+                            document.getElementById("myOutput").innerHTML = "fizzBuzz";   
+  
+                        }
+                        else{
+                            document.getElementById("myOutput").innerHTML = i;   
+                    }
+                    }
+                }
+
+
+                
+            
+
+            
+            // function myFunc() {
+            //     fuc = inputBox.value;
+            //     box.push(fuc);
+            //     alert(box);    
+            
+            // }   
+                // 
+                
+            
+
+
+               
+            
+        </script>
+
+
+        
+    </body>
+</html>

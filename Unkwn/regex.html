@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGEX</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <button onclick="myFunc()">Click me!</button>
+    <script>
+        // let reg = /\s/ig;
+        let reg = /taiwo/g;
+
+        const myFunc = () =>{
+            // let validate = reg.test(inp.value);
+            // if (validate) {
+            //     alert(true);
+            //     return;
+            // }
+            //     alert(false);
+            // alert(inp.value.replace(reg, 'Kenny'));
+            alert(inp.value.match(reg));
+
+        }
+    </script>
+</body>
+</html>

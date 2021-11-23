@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHONE APP</title>
+    <link rel="stylesheet" href="phone.css">
+    <script src="phone.js"></script>
+</head>
+<body>
+    <div id="phonebg">
+        <div id="time"></div>
+         <div id="homeScreen">
+            <div id="showtime">time</div>
+            <div id="showdate"></div>
+            <div id="icons">
+                <button onclick="dialer()"><img src="images/dial1.png" alt=""></button>
+                <button onclick="vouch()"><img src="images/voucher2.png" alt="" ></button>
+            </div>           
+         </div>
+         <div id="voucher">
+             <div id="quantity">
+                 <span>Quantity:</span>
+                 <input type="number" placeholder="0" id="quan">
+             </div>
+             <div id="amount">
+                 <span>Amount:</span>
+                 <select name="" id="amt">
+                     <option value="100">100</option>
+                     <option value="200">200</option>
+                     <option value="500">500</option>
+                     <option value="1000">1000</option>
+                 </select>
+             </div>
+             <div id="network">
+                 <span>Network:</span>
+                 <select name="" id="netw">
+                     <option value="mtn">MTN</option>
+                     <option value="glo">Glo</option>
+                     <option value="9mobile">9mobile</option>
+                     <option value="airtel">Airtel</option>
+                 </select>
+             </div>
+             <button id="gen" onclick="generate()">Generate</button>
+             <button id="displ" onclick="disp()">Show all generated cards</button>
+         </div>
+         <div id="displayCards"></div>
+         <div id="dialer">
+             <div>
+                 <input type="text" id="dial">
+             </div>
+             <div id="numbers">
+                 <div id="row1">
+                    <button onclick="myFunc(1)">1</button>
+                    <button onclick="myFunc(2)">2</button>
+                    <button onclick="myFunc(3)">3</button>
+                 </div>
+                 <div id="row1">
+                    <button onclick="myFunc(4)">4</button>
+                    <button onclick="myFunc(5)">5</button>
+                    <button onclick="myFunc(6)">6</button>
+                 </div> <div id="row1">
+                    <button onclick="myFunc(7)">7</button>
+                    <button onclick="myFunc(8)">8</button>
+                    <button onclick="myFunc(9)">9</button>
+                 </div> <div id="row1">
+                    <button onclick="myFunc('*')">*</button>
+                    <button onclick="myFunc(0)">0</button>
+                    <button onclick="myFunc('#')">#</button>
+                 </div>
+             </div>
+         </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MULTIPLICATION TABLE</title>
+    </head>
+    <style>
+        body{
+            padding: 50px 70px;
+            display: flex;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #dsgline1{
+            height: 100vh;
+            width: 1vh;
+            background-color: red;
+            margin-right: 30px;
+        }
+        hr{
+            text-align: center;
+            margin-bottom: 50px;
+
+        }
+        #inputDiv{
+            margin-bottom: 30px;   
+            
+        }
+        #divLine{
+            height: 200px;
+            width: 1px;
+        }
+
+
+    </style>
+    <body>
+        <div id="dsgline1"></div>
+        <div id="wholeDic"> 
+            <h3>Yeah! A standard multiplication table for your kids to learn with...</h3>
+            <hr>
+            <div id="inputDiv">
+                <input type="text" placeholder="Input the number of columns..." id="colInput">
+                <input type="text" placeholder="Input the number of rows..." id="rowInput">
+                <button onclick="genFunc()" id="gen">Generate</button>
+                <button onclick= "offFunc()" id="btn">Clear History</button>
+                <!-- <hr id="divLine"> -->
+            </div>
+        <div id="outputDiv"></div>
+        </div>
+
+        <script>
+            // document.getElementById("divLine").style.display = "hidden";
+            function genFunc() { 
+                var col = document.getElementById("colInput").value;
+                var wor = document.getElementById("rowInput").value;
+                for (let i = 1; i <= col; i++) {
+                    for (let j = 1; j <= wor; j++) {
+                    var multiply = i * j;
+                    document.getElementById("outputDiv").innerHTML += i + " x " + j + " = " + multiply + "<br>" + "<br>";
+                    // document.getElementById("divLine").style.visibility = "visible";
+
+                // document.getElementById("outputDiv").style.display = flex;
+                    }
+                }
+            }
+            function offFunc() {
+                document.getElementById("outputDiv").style.display = "none";
+
+            }
+            
+
+
+        </script>
+
+    </body>
+</html>

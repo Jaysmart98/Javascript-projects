@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY CLASS</title>
+</head>
+<body>
+    <!-- data structure into two
+    interface the look
+    implementation what you can perform on it -->
+    <input type="text" id="item">
+    <input type="text" id="price">
+    <input type="text" id="discount">
+    <button onclick="myFunc()">CLICK ME</button>
+    <script>
+function myFunc(){
+    var items = [];
+    // var students = ["tolu", "praise", "best",]
+    // for(let i = 0; i <= students.length-1; i++){
+    //     console.log(students[i]);
+    // }                
+    
+// instantiation, condition, decreasement or increasement
+// for(var i = 100; i >= 0; i--){
+//     console.log(i);
+// }
+
+let myItem = document.getElementById('item').value;
+let price = document.getElementById('price').value;
+let Discount =document.getElementById('discount').value;
+
+let itemObject = {"item":myItem, "price": price, "discount": Discount };
+items.push(itemObject);
+console.log(items);
+}
+
+// loop is been used 
+// structure for implementation
+// for
+// while
+    </script>
+    <!-- cinema ticketing system
+    numberof available sit 50
+    allocate sit
+    print ticket -->
+    <!-- 50 array method
+    google.com -->
+    <!-- mozzila mdn -->
+    <!-- palindrome
+    developer.mozilla.org
+    input check 
+    fizz
+    buzz
+    3/5 fizzBuzz -->
+    <!-- dad
+    mom
+    dad -->
+</body>
+</html>
