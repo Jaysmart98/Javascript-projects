@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+
+            #container {
+                background-color: chocolate;
+                border-radius: 5%;
+                height: 250pt;
+                text-align: center;
+                width: 450pt;
+            }
+            input {
+                border: none;
+                background-color: bisque;
+                font-family: sans-serif;
+                font-weight: bolder;
+                font-size: 1.5em;
+                width: 420pt;
+                height: 30pt;
+            }
+            #num {
+                border-radius: 10% 10% 0 0;
+                margin-top: 15pt;
+            }
+            #numresult {
+                border-radius: 0 0 10% 10%;
+                text-align: right;
+            }
+
+            button {
+                background-color: bisque;
+                border-radius: 10%;
+                border: none;
+                font-weight: 900;
+                font-size: 1em;
+                width: 50pt;
+                height: 25pt;
+            }
+
+            #first, #second, #third, #fourth, #fifth{
+                margin-top: 5pt;
+            }
+
+            #result {
+                width: 103pt;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="container">
+            <input type="text" id="num"> <br>
+            <input type="text" id="numresult">
+        
+            <div>
+                <div id="first">
+                    <button onclick="ceil()">ceil</button>
+                    <button id="sin" onclick="num.value += 'sin' ">sin</button>
+                    <button id="cos" onclick="num.value += 'cos'">cos</button>
+                    <button id="tan" onclick="num.value += 'tan' ">tan</button>
+                    <button onclick="num.value += '(' ">(</button>
+                    <button onclick="num.value += ')' ">)</button>
+                    <button onclick="delet()">Del</button>
+                    <button onclick="num.value = '', numresult.value = '' ">AC</button>
+                </div>
+
+                <div id="second">
+                    <button onclick="floor()">floor</button>
+                    <button id="arcsin" onclick="num.value += 'arcsin' ">sin<sup>-1</sup></button>
+                    <button id="arccos" onclick="num.value += 'arccos' ">cos<sup>-1</sup></button>
+                    <button id="arctan" onclick="num.value += 'arctan' ">tan<sup>-1</sup></button>
+                    <button onclick="num.value += '7' ">7</button>
+                    <button onclick="num.value += '8' ">8</button>
+                    <button onclick="num.value += '9' ">9</button>
+                    <button onclick="num.value += '/' ">/</button>
+                </div> 
+
+                <div id="third">
+                    <button onclick="random()">rand</button>
+                    <button onclick="num.value += 'log' ">log</button>
+                    <button onclick="num.value += 'log\u2082' ">log<sub>2</sub></button>
+                    <button onclick="num.value += '\u00B3√'"><sup>3</sup>√</button>
+                    <button onclick="num.value += '4' ">4</button>
+                    <button onclick="num.value += '5' ">5</button>
+                    <button onclick="num.value += '6' ">6</button>
+                    <button onclick="num.value += '*' ">x</button>
+                </div>
+
+                <div id="fourth">
+                    <button onclick="round()">round</button>
+                    <button onclick="num.value += '\u00B2' ">x<sup>2</sup></button>
+                    <button onclick="num.value += '\u00B3' ">x<sup>3</sup></button>
+                    <button onclick="num.value += '√' ">√</button>
+                   <button onclick="num.value += '1' ">1</button>
+                    <button onclick="num.value += '2' ">2</button>
+                    <button onclick="num.value += '3' ">3</button>
+                    <button onclick="num.value += '+' ">+</button>
+                </div>
+
+                <div id="fifth">
+                    <button onclick="num.value += 'e' ">e</button>
+                    <button onclick="num.value += '-' ">±</button>
+                    <button onclick="num.value += '%' ">%</button>
+                    <button onclick="num.value += '.' ">.</button>
+                    <button onclick="num.value += '0' ">0</button>
+                    <button id="result" onclick="result()">=</button>
+                    <button onclick="num.value += '-' ">---</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+// delete button
+            const delet = ()=> {
+                var del = num.value;
+                num.value = del.slice(0, -1);
+            };
+            
+// cos button
+            const cosValuer = ()=> {
+                var cos = num.value.substring(3);
+                var cosEval = eval(cos);
+                numresult.value = Math.cos(cosEval * Math.PI / 180);
+            };
+
+// cos (arcsin) negative button
+            const cosNegative = ()=> {
+                var cosNegative = num.value.substring(6);
+                var cosNEval = eval(cosNegative);
+                numresult.value = Math.cosh(cosNEval * Math.PI / 180);
+            };
+            
+
+// sin button
+            const sinValuer = ()=> {
+                var sin = num.value.substring(3);
+                var sinEval = eval(sin);
+                numresult.value = Math.sin(sinEval * Math.PI / 180);
+            };
+
+// sin (arcsin) negative button
+            const sinNegative = ()=> {
+                var sinNegative = num.value.substring(6);
+                var sinNEval = eval(sinNegative);
+                numresult.value = Math.sinh(sinNEval);
+            };
+
+// tan button
+            const tanValuer = ()=> {
+                var tan = num.value.substring(3);
+                var tanEval = eval(tan);
+                numresult.value = Math.tan(tanEval * Math.PI / 180);
+            };
+
+// tan (arctan) negative result
+            const tanNegative = ()=> {
+                var tanNegative = num.value.substring(6);
+                var tanNEval = eval(tanNegative);
+                numresult.value = Math.tanh(tanNEval);
+            };
+// square root button
+            const squareValuer = ()=> {
+                var squar = num.value.substring(1);
+                var squarEval = eval(squar);
+                numresult.value = Math.sqrt(squarEval);
+            };
+// log button
+            const logValue = ()=> {
+                var log = num.value.substring(3);
+                var logEval = eval(log);
+                numresult.value = Math.log(logEval);
+            };
+// log base 2 
+            const logTwo = ()=> {
+                var logBase = num.value.substring(4);
+                var logEval = eval(logBase);
+                numresult.value = Math.log2(logEval);
+            };
+// exponential
+            const expValuer = ()=> {
+                var exp = num.value.substring(1);
+                var expEval = eval(exp);
+                numresult.value = Math.exp(expEval);
+            };
+// square of 2
+            const squareTwo = ()=> {
+                var squa = num.value.slice(0, -1);
+                var squaEval = eval(squa);
+                numresult.value = Math.pow(squaEval, 2);
+            };
+// square of 3
+            const squareThree = ()=> {
+                var three = num.value.slice(0, -1);
+                var threeEval = eval(three);
+                numresult.value = Math.pow(threeEval, 3);
+            };
+// random number
+            const random = ()=> {
+                num.value = Math.random();
+            };
+// cubic root 
+            const cubic = ()=> {
+                var cub = num.value.substring(2);
+                var cubEval = eval(cub);
+                numresult.value = Math.cbrt(cubEval);
+            };
+// floor result
+            const floor = ()=> {
+                if (numresult.value !== "") {
+                    num.value = numresult.value;
+                    numresult.value = Math.floor(num.value);
+                };
+            };
+// round result
+            const round = ()=> {
+                if (numresult.value !== "") {
+                    num.value = numresult.value;
+                    numresult.value = Math.round(num.value);
+                };
+            };
+
+            const ceil = ()=> {
+                if (numresult.value !== "") {
+                    num.value = numresult.value;
+                    numresult.value = Math.ceil(num.value);
+                };
+            };
+// result button
+            const result = ()=> {
+                var numSlice = num.value.slice(0, 3);
+                var numSlicc = num.value.slice(0, 4);
+                var numSlictwo = num.value.slice(0, 2);
+                var numArc = num.value.slice(0, 6)
+                var numSlicer = num.value.charAt(0);
+                var numSlicing = num.value.slice(-1);
+                
+        // cos and negative cos (arccos) result
+                if (numSlice == "cos") {
+                    cosValuer();
+                } else if (numArc == "arccos") {
+                    cosNegative();
+                }
+        // sin and negative sin (arcsin) result            
+                else  if (numSlice == "sin") {
+                    sinValuer()
+                } else if (numArc == "arcsin") {
+                    sinNegative();
+                }
+        // tan and negative tan (arctan) result         
+                else if (numSlice == "tan") {
+                    tanValuer();
+                } else if (numArc == "arctan") {
+                    tanNegative();
+                }
+        // square root result
+                else if (numSlicer == "√") {
+                    squareValuer();
+                } 
+        // exp result        
+                else if (numSlicer == "e") {
+                    expValuer();
+                } 
+         // square of 2 and 3 result       
+                else if (numSlicing == "\u00B2") {
+                    squareTwo();
+                } else if (numSlicing == "\u00B3") {
+                    squareThree();
+                }
+        // log base 2 and natural base result        
+                else if (numSlicc == 'log\u2082') {
+                    logTwo();
+                } else if (numSlice == "log") {
+                    logValue();
+                }
+        // cubic root result
+                else if (numSlictwo == '\u00B3√') {
+                    cubic();
+                }
+        // normal result
+                else if (numSlice !== "sin" || "tan" || "cos" || "√") {
+                    numresult.value = eval(num.value);
+                };
+            };
+
+
+        </script>
+    </body>
+</html>
